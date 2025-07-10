@@ -6,6 +6,10 @@
 - used under the hood by Pandas and Polars and also Spark.
 - available in Python via PyArrow.
 
+My principal use case for Arrow is sharing data between systems. Contrast:
+- Conventional: serialise to csv, json, etc; copy into memory;  parse and reinterpret data types.
+- Arrow: in-memory representation that can be shared directly across systems / processes.
+
 ### Installation
 - `pip install pyarrow`
 - `conda install -c conda-forge pyarrow`
