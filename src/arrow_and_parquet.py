@@ -1,5 +1,6 @@
 import pyarrow as pa
 import pyarrow.parquet as pq
+from pathlib import Path
 
 """
 The beginnings of a realistic workflow
@@ -30,10 +31,14 @@ print(table.schema)
 
 # Parquet
 
+# ... specify the path to the data
+cwd = Path.cwd()
+data_path = cwd.parent / "data" / "sales_data.parquet"
+
 # ... write
-pq.write_table(table, "sales_data.parquet")
+pq.write_table(table, data_path)
 
 # ... read
-loaded_table = pq.read_table("sales_data.parquet")
+loaded_table = pq.read_table(data_path)
 print("\nParquet table")
 print(loaded_table)
